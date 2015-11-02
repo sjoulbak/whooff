@@ -26,6 +26,24 @@ ActiveRecord::Schema.define(version: 20151102141753) do
   add_index "comments", ["topic_id"], name: "index_comments_on_topic_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
+  create_table "groups", force: :cascade do |t|
+    t.string   "title"
+    t.string   "thumbnail"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "groups", ["user_id"], name: "index_groups_on_user_id"
+
+  create_table "subscriptions", id: false, force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "user_id"
+  end
+
+  add_index "subscriptions", ["group_id"], name: "index_subscriptions_on_group_id"
+  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id"
+
   create_table "topics", force: :cascade do |t|
     t.string   "title"
     t.text     "text"
@@ -35,5 +53,15 @@ ActiveRecord::Schema.define(version: 20151102141753) do
   end
 
   add_index "topics", ["user_id"], name: "index_topics_on_user_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "password"
+    t.boolean  "premium",    default: false
+    t.string   "email"
+    t.string   "color"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
 end

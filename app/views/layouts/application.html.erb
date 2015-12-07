@@ -7,8 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <section id="container">
+  <header>
+    <div id="logo">
+      <%= image_tag 'whooff.png', :class => "logo" %>
+    </div>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="">Topics</a></li>
+      <li><a href="">Groups</a></li>
+      <li><a href="">FAQ</a></li>
+    </ul>
+  </header>
 
 <%= yield %>
-
+	</section>
+<footer>
+</footer>
 </body>
 </html>

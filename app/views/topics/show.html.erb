@@ -1,14 +1,15 @@
+<div id="trendingtopic">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @topic.title %>
-</p>
+  <h2><%= @topic.title %></h2>
+  <p><%= @topic.text %></p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @topic.text %>
-</p>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to 'Edit', edit_topic_path(@topic) , :class => "buttons"%> |
+<%= link_to 'Back', topics_path , :class => "buttons"%>
+
+<h3>Comments</h3>
+
+
+
+</div>

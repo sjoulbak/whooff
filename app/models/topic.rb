@@ -5,5 +5,5 @@ class Topic < ActiveRecord::Base
   has_many :users, through: :comments
   has_many :comments, :dependent => :destroy
 
-  validates :title, :text, :user_id, :presence => true
+  validates :title, :text,  :presence => true 
 end

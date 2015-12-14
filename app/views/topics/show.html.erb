@@ -9,7 +9,20 @@
 <%= link_to 'Back', topics_path , :class => "buttons"%>
 
 <h3>Comments</h3>
+<%= render @topic.comments %>
 
-
-
-</div>
+<h4>New comment</h4>
+<%= form_for [@topic, @topic.comments.build] do |f| %>
+  <div class="field">
+    <%= f.label :user %><br>
+    <%= f.collection_select(:user, User.all, :user, :username) %>
+    <%# f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

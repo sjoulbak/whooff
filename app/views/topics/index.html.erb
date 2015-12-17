@@ -1,21 +1,20 @@
-<div id="pagemenu">
-  <%= link_to 'New Topic', new_topic_path, :class => "newtopic" %>
-</div>
-<p id="notice"><%= notice %></p>
+<% if current_user %>
+  <div id="pagemenu">
+    <%= link_to 'New Topic', new_topic_path, :class => "newtopic" %>
+  </div>
+<% end %>
+
 <div id="trendingtopic">
-<h1>Listing Topics</h1>
-    <% @topics.each do |topic| %>
-        <h2><%= topic.title %></h2>
-        <p><%= topic.text %></p>
+  <h1>Listing Topics</h1>
+  <% @topics.each do |topic| %>
+    <h2><%= topic.title %></h2>
+    <p><%= topic.text %></p>
     <div id="readme">
-        <p>
+      <p>
         <%= link_to 'Read more!', topic , :class => "buttons" %>
         <%= link_to 'Edit', edit_topic_path(topic), :class => "buttons" %>
         <%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' }, :class => "buttons" %>
       </p>
     </div>
-    <% end %>
-
-
-			</div>
-<br>
+  <% end %>
+</div><br>

@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
-  skip_before_action :require_login, only: [:index]
+  skip_before_action :require_login, only: [:index, :show]
 
   # GET /groups
   # GET /groups.json

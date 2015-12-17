@@ -1,6 +1,8 @@
-<div id="pagemenu">
-  <%= link_to 'New group', new_group_path, :class => "newtopic" %>
-</div>
+<% if current_user %>
+  <div id="pagemenu">
+    <%= link_to 'New group', new_group_path, :class => "newtopic" %>
+  </div>
+<% end %>
 
 <p id="notice"><%= notice %></p>
 <div id="trendingtopic">

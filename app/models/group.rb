@@ -6,5 +6,9 @@ class Group < ActiveRecord::Base
   belongs_to :user
   has_many :comments, :dependent => :destroy
 
-  validates :title, :user_id, :presence => true
+  validates :title,  :presence => true #:user_id,
+
+
+  extend Dragonfly::Model
+  dragonfly_accessor :image
 end

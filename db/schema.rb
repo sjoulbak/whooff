@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102141753) do
+ActiveRecord::Schema.define(version: 20151116134753) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
-    t.integer  "topic_id"
-    t.integer  "group_id"
     t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20151102141753) do
   end
 
   add_index "groups", ["user_id"], name: "index_groups_on_user_id"
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "image_uid"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "subscriptions", id: false, force: :cascade do |t|
     t.integer "group_id"

@@ -13,3 +13,137 @@
  *= require_tree .
  *= require_self
  */
+@import 'bootstrap';
+
+ body{
+   margin: 0 auto;
+   background-color: #cccccc;
+ }
+
+ #container {
+   width: 80%;
+   margin: 0 auto;
+   background-color: white;
+ }
+
+ /* header en menu */
+ header{
+   width: 100%;
+   height: 100px;
+   background-color: #1e8fd7;
+ }
+
+ .logo{
+   height: 100px;
+   margin-left: 20px;
+ }
+
+ .logo{
+   float: left;
+ }
+
+ ul {
+     margin: 0;
+     float: left;
+     display: inline-block;
+     list-style-type: none;
+ }
+
+ li{
+   text-decoration: none;
+   display: inline-block;
+ }
+
+.newtopic{
+  font-size: 22px;
+  padding: 5px;
+  float: right;
+}
+
+ a, ul#menu li a:hover,ul#menu li.active, a.visited{
+ color: white;
+ font-size: 24px;
+ text-decoration: none;
+ }
+
+#pagemenu{
+  background-color: #3b3b3b;
+  width: 100%;
+  height: 35px;
+}
+ #login-button{
+   color: black;
+   float: right;
+ }
+
+#menu{
+  padding-top: 35px;;
+  padding-right: 20px;
+  float: right;
+}
+
+ /* content */
+
+ #content{
+   width: 97%;
+   background-color: #535353;
+   height: auto;
+   padding: 15px;
+ }
+
+ #trendingtopic{
+   background-color: white;
+   margin: 0 auto;
+   height: auto;
+   padding: 5px;
+ }
+
+#readme{
+  position: relative;
+  right: 0px;
+}
+
+.buttons{
+   color: black;
+ }
+
+ #imgtrending{
+   max-width: 200px;
+   height: auto;
+   border-radius: 15px;
+ }
+
+ p{
+   clear: left;
+ }
+
+ /* footer */
+ footer{
+   width: 80%;
+   margin: 0 auto;
+   height: 100px;
+   background-color: #1e8fd7;
+ }
+
+
+/* Dragonfly images */
+#photos-list {
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+  clear: both;
+  li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 250px;
+    margin-bottom: 10px;
+    text-align: center;
+    p {
+      margin: 0;
+      margin-top: 10px;
+      height: 40px;
+      overflow: hidden;
+    }
+  }
+}

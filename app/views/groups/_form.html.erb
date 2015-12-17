@@ -15,9 +15,9 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
-    <div class="field">
-    <%= f.label :afbeelding %><br>
-    <%= f.text_field :thumbnail %>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :thumbnail, required: true %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,6 +1,9 @@
-<h1>Editing Topic</h1>
+
+<div id="trendingtopic">
+<h2>Editing Topic</h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @topic %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to 'Show', @topic, :class => "buttons" %>
+<%= link_to 'Back', topics_path, :class => "buttons" %>
+</div>

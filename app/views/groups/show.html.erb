@@ -5,8 +5,9 @@
 <h2><%= @group.title %></h2>
 <p><%= @group.thumbnail %></p>
 
-<%= link_to 'Edit', edit_group_path(@group), :class => "buttons" %> |
-
+<% if @topic.user == current_user %>
+  <%= link_to 'Edit', edit_topic_path(@group) , :class => "buttons"%>
+<% end %>
 <h3>Comments</h3><hr>
 <%= render @group.comments %>
 

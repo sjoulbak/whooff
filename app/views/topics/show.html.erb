@@ -2,11 +2,8 @@
   <%= link_to '<', topics_path, :class => "newtopic" %>
 </div>
 
-<p id="notice"><%= notice %></p>
-
-  <h2><%= @topic.title %></h2>
-  <p><%= @topic.text %></p>
-
+<h2><%= @topic.title %></h2>
+<p><%= @topic.text %></p>
 
 <%= link_to 'Edit', edit_topic_path(@topic) , :class => "buttons"%> |
 

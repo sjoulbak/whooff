@@ -54,10 +54,16 @@
    display: inline-block;
  }
 
+ #nav{
+   background-color: black;
+   padding:5px;
+ }
+
 .newtopic{
   font-size: 22px;
   padding: 5px;
   float: right;
+  margin-top: 0px;
 }
 
  a, ul#menu li a:hover,ul#menu li.active, a.visited{
@@ -70,6 +76,7 @@
   background-color: #3b3b3b;
   width: 100%;
   height: 35px;
+  margin-top:-13px;
 }
  #login-button{
    color: black;
@@ -124,7 +131,6 @@
    height: 100px;
    background-color: #1e8fd7;
  }
-
 
 /* Dragonfly images */
 #photos-list {

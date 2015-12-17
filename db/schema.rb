@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151116134753) do
+ActiveRecord::Schema.define(version: 20151217083811) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
@@ -62,13 +62,13 @@ ActiveRecord::Schema.define(version: 20151116134753) do
   add_index "topics", ["user_id"], name: "index_topics_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password"
-    t.boolean  "premium",    default: false
-    t.string   "email"
-    t.string   "color"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "email",            null: false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

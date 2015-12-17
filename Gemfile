@@ -56,3 +56,6 @@ gem 'bootstrap-sass'
 group :production do
   gem 'rack-cache', :require => 'rack/cache'
 end
+
+# Sorcery login/register
+gem 'sorcery'

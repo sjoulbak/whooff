@@ -14,8 +14,8 @@
 <h4>New comment</h4>
 <%= form_for [@topic, @topic.comments.build] do |f| %>
   <div class="field">
-    <%= f.label :user %><br>
-    <%= f.collection_select(:user_id, User.all, :id, :username) %>
+    <%# f.label :user %><br>
+    <%# f.collection_select(:user_id, User.all, :id, :username) %>
     <%# f.text_field :author %>
   </div>
   <div class="field">

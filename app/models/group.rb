@@ -9,6 +9,6 @@ class Group < ActiveRecord::Base
   validates :title,  :presence => true #:user_id,
 
 
-  extend Dragonfly::Model
-  dragonfly_accessor :image
+  # extend Dragonfly::Model
+  # dragonfly_accessor :image
 end

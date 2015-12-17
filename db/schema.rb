@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217083811) do
+ActiveRecord::Schema.define(version: 20151217100752) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
-    t.integer  "topic_id"
-    t.integer  "group_id"
     t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -62,11 +62,12 @@ ActiveRecord::Schema.define(version: 20151217083811) do
   add_index "topics", ["user_id"], name: "index_topics_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",            null: false
+    t.string   "email",                            null: false
     t.string   "crypted_password"
     t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "premium",          default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

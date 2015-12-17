@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102141753) do
+ActiveRecord::Schema.define(version: 20151217083811) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
-    t.integer  "topic_id"
-    t.integer  "group_id"
     t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "topic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20151102141753) do
   end
 
   add_index "groups", ["user_id"], name: "index_groups_on_user_id"
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "image_uid"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "subscriptions", id: false, force: :cascade do |t|
     t.integer "group_id"
@@ -55,13 +62,13 @@ ActiveRecord::Schema.define(version: 20151102141753) do
   add_index "topics", ["user_id"], name: "index_topics_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "password"
-    t.boolean  "premium",    default: false
-    t.string   "email"
-    t.string   "color"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "email",            null: false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

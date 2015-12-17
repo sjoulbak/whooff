@@ -1,6 +1,18 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="font-awesome-animation.min.css">
-<script type="text/javascript">
+/*!
+ * jQuery JavaScript Library v1.4.1
+ * http://jquery.com/
+ *
+ * Copyright 2010, John Resig
+ * Dual licensed under the MIT or GPL Version 2 licenses.
+ * http://jquery.org/license
+ *
+ * Includes Sizzle.js
+ * http://sizzlejs.com/
+ * Copyright 2010, The Dojo Foundation
+ * Released under the MIT, BSD, and GPL Licenses.
+ *
+ * Date: Mon Jan 25 19:43:33 2010 -0500
+ */
 (function(z,v){function la(){if(!c.isReady){try{r.documentElement.doScroll("left")}catch(a){setTimeout(la,1);return}c.ready()}}function Ma(a,b){b.src?c.ajax({url:b.src,async:false,dataType:"script"}):c.globalEval(b.text||b.textContent||b.innerHTML||"");b.parentNode&&b.parentNode.removeChild(b)}function X(a,b,d,f,e,i){var j=a.length;if(typeof b==="object"){for(var n in b)X(a,n,b[n],f,e,d);return a}if(d!==v){f=!i&&f&&c.isFunction(d);for(n=0;n<j;n++)e(a[n],b,f?d.call(a[n],n,e(a[n],b)):d,i);return a}return j?
 e(a[0],b):null}function J(){return(new Date).getTime()}function Y(){return false}function Z(){return true}function ma(a,b,d){d[0].type=a;return c.event.handle.apply(b,d)}function na(a){var b,d=[],f=[],e=arguments,i,j,n,o,m,s,x=c.extend({},c.data(this,"events").live);if(!(a.button&&a.type==="click")){for(o in x){j=x[o];if(j.live===a.type||j.altLive&&c.inArray(a.type,j.altLive)>-1){i=j.data;i.beforeFilter&&i.beforeFilter[a.type]&&!i.beforeFilter[a.type](a)||f.push(j.selector)}else delete x[o]}i=c(a.target).closest(f,
 a.currentTarget);m=0;for(s=i.length;m<s;m++)for(o in x){j=x[o];n=i[m].elem;f=null;if(i[m].selector===j.selector){if(j.live==="mouseenter"||j.live==="mouseleave")f=c(a.relatedTarget).closest(j.selector)[0];if(!f||f!==n)d.push({elem:n,fn:j})}}m=0;for(s=d.length;m<s;m++){i=d[m];a.currentTarget=i.elem;a.data=i.fn.data;if(i.fn.apply(i.elem,e)===false){b=false;break}}return b}}function oa(a,b){return"live."+(a?a+".":"")+b.replace(/\./g,"`").replace(/ /g,"&")}function pa(a){return!a||!a.parentNode||a.parentNode.nodeType===
@@ -138,119 +150,3 @@ e.left+j};"using"in b?b.using.call(a,d):f.css(d)}};c.fn.extend({position:functio
 this.offsetParent||r.body;a&&!/^body|html$/i.test(a.nodeName)&&c.css(a,"position")==="static";)a=a.offsetParent;return a})}});c.each(["Left","Top"],function(a,b){var d="scroll"+b;c.fn[d]=function(f){var e=this[0],i;if(!e)return null;if(f!==v)return this.each(function(){if(i=ua(this))i.scrollTo(!a?f:c(i).scrollLeft(),a?f:c(i).scrollTop());else this[d]=f});else return(i=ua(e))?"pageXOffset"in i?i[a?"pageYOffset":"pageXOffset"]:c.support.boxModel&&i.document.documentElement[d]||i.document.body[d]:e[d]}});
 c.each(["Height","Width"],function(a,b){var d=b.toLowerCase();c.fn["inner"+b]=function(){return this[0]?c.css(this[0],d,false,"padding"):null};c.fn["outer"+b]=function(f){return this[0]?c.css(this[0],d,false,f?"margin":"border"):null};c.fn[d]=function(f){var e=this[0];if(!e)return f==null?null:this;if(c.isFunction(f))return this.each(function(i){var j=c(this);j[d](f.call(this,i,j[d]()))});return"scrollTo"in e&&e.document?e.document.compatMode==="CSS1Compat"&&e.document.documentElement["client"+b]||
 e.document.body["client"+b]:e.nodeType===9?Math.max(e.documentElement["client"+b],e.body["scroll"+b],e.documentElement["scroll"+b],e.body["offset"+b],e.documentElement["offset"+b]):f===v?c.css(e,d):this.css(d,typeof f==="string"?f:f+"px")}});z.jQuery=z.$=c})(window);
-
-</script>
-
-<script type="text/javascript">
-/* accessible */
-$(document).ready(function() {
-  $('#faqs h3').each(function() {
-    var tis = $(this), state = false, answer = tis.next('div').slideUp();
-    tis.click(function() {
-      state = !state;
-      answer.slideToggle(state);
-      tis.toggleClass('active',state);
-    });
-  });
-});
-   $('#faqs h3').click(function(){
-       $(this).next('.hi').toggleClass("right down");
-  });
-</script>
-<div id="trendingtopic" class="test">
-<div id="faqs">
-    <h3>Vraag 1 <img style="float:right; padding-top:7px; padding-right:10px;" src="<%= image_path "right.png" %>"></h3>
-      <div>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin tellus nec libero interdum efficitur.
-        Proin mattis nunc id nisi convallis, vitae suscipit lacus aliquet. Nam sit amet enim maximus, commodo metus eget, accumsan est.
-        Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam semper lectus a nisi euismod, id eleifend sem consectetur.
-        Nam rutrum sem dui, eget dictum sem condimentum quis.
-        </p>
-      </div>
-
-    <h3>Vraag 2 <img style="float:right; padding-top:7px; padding-right:10px;" src="<%= image_path "right.png" %>"></h3>
-      <div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin tellus nec libero interdum efficitur.
-          Proin mattis nunc id nisi convallis, vitae suscipit lacus aliquet. Nam sit amet enim maximus, commodo metus eget, accumsan est.
-          Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam semper lectus a nisi euismod, id eleifend sem consectetur.
-          Nam rutrum sem dui, eget dictum sem condimentum quis.
-        </p>
-      </div>
-
-    <h3>Vraag 3 <img style="float:right; padding-top:7px; padding-right:10px;" src="<%= image_path "right.png" %>"></h3>
-      <div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin tellus nec libero interdum efficitur.
-          Proin mattis nunc id nisi convallis, vitae suscipit lacus aliquet. Nam sit amet enim maximus, commodo metus eget, accumsan est.
-          Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam semper lectus a nisi euismod, id eleifend sem consectetur.
-          Nam rutrum sem dui, eget dictum sem condimentum quis.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sollicitudin tellus nec libero interdum efficitur.
-          Proin mattis nunc id nisi convallis, vitae suscipit lacus aliquet. Nam sit amet enim maximus, commodo metus eget, accumsan est.
-          Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam semper lectus a nisi euismod, id eleifend sem consectetur.
-          Nam rutrum sem dui, eget dictum sem condimentum quis.
-        </p>
-      </div>
-    </div>
-<style>
-/* CSS especially for FAQ.php */
-.test{
-  min-height:72vh;
-}
-
-
-#content-faq{
-  height:50vh;
-  padding:10vh;
-}
-
-#faqs{
-  position:;
-  float: left;
-  width: 50vw;
-  margin-left: 15vw;
-  margin-bottom:2vh;
-}
-
-#faqs h3{
-  cursor:pointer;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  width:50vw;
-  height:4vh;
-  box-shadow: 0px 5px 5px #888888;
-  margin-top: 0vh;
-  padding-top: 1.5vh;
-  text-align: center;
-  color: #3b8904;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-#faqs img{
-  margin-top:-1vh;
-}
-
-#faqs h3.active{
-  box-shadow: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  color: #3b8904;
- }
-
-#faqs div{
-  position:;
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  border-left: 1px solid rgba(0, 0, 0, 0.2);
-  width:50vw;
-  height:auto;
-  margin-top:-2vh;
-  margin-bottom:5px;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-#faqs div p{
-  padding:0;
-  margin-bottom:15px;
-  padding:20px 20px 20px 20px;
-}
-</style>

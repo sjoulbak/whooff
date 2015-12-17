@@ -1,4 +1,7 @@
-<div id="trendingtopic">
+<div id="pagemenu">
+  <%= link_to '<', topics_path, :class => "newtopic" %>
+</div>
+
 <p id="notice"><%= notice %></p>
 
   <h2><%= @topic.title %></h2>
@@ -8,7 +11,7 @@
 <%= link_to 'Edit', edit_topic_path(@topic) , :class => "buttons"%> |
 <%= link_to 'Back', topics_path , :class => "buttons"%>
 
-<h3>Comments</h3>
+<h3>Comments</h3><hr>
 <%= render @topic.comments %>
 
 <h4>New comment</h4>

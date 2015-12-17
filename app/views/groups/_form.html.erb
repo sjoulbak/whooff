@@ -19,6 +19,11 @@
     <%= f.label :afbeelding %><br>
     <%= f.text_field :thumbnail %>
   </div>
+  <div class="field">
+    <%= f.label :user %><br>
+    <%= f.collection_select(:user_id, User.all, :id, :username) %>
+    <%# f.text_field :author %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

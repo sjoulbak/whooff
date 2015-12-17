@@ -66,10 +66,13 @@
   margin-top: 0px;
 }
 
- a, ul#menu li a:hover,ul#menu li.active, a.visited{
+ a,ul#menu li.active, a.visited{
  color: white;
  font-size: 24px;
  text-decoration: none;
+ }
+ ul#menu li a:hover{
+   color: #757575;
  }
 
 #pagemenu{

@@ -10,5 +10,24 @@
   <%= @group.thumbnail %>
 </p>
 
+<h3>Comments</h3>
+<%= render @group.comments %>
+
+<h4>New comment</h4>
+<%= form_for [@group, @group.comments.build] do |f| %>
+  <div class="field">
+    <%= f.label :user %><br>
+    <%= f.collection_select(:user_id, User.all, :id, :username) %>
+    <%# f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

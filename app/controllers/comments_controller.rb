@@ -12,6 +12,18 @@ class CommentsController < ApplicationController
         alert: 'Error creating comment'
         @comment.errors.full_messages.to_sentence
       end
+    else
+      @group = Group.find(params[:group_id])
+      @comment = @group.comments.build(comment_params)
+
+      if @comment.save
+        redirect_to @group,
+        notice: 'comment was created'
+      else
+        redirect_to @group,
+        alert: 'Error creating comment'
+        @comment.errors.full_messages.to_sentence
+      end
     end
   end
 
@@ -30,6 +42,6 @@ private
 
 
   def comment_params
-    params.require(:comment).permit(:user, :text)
+    params.require(:comment).permit(:user_id, :text)
   end
 end
